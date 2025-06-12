@@ -20,4 +20,19 @@ public class ConfigReader {
     public static String getProperty(String key) {
         return properties.getProperty(key);
     }
+
+
+
+    public static String getTagName() {
+        if (properties == null) {
+            properties = new Properties();
+            try {
+                FileInputStream fis = new FileInputStream("src/test/resources/config.properties");
+                properties.load(fis);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return properties.getProperty("TAG_NAME", "@default");
+    }
 }

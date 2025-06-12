@@ -10,8 +10,11 @@
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/MobileBrowserTest.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/sample.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/IOSLongPress.java
+/Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/walmart/mobileautomation/CI_CD/ConfigUtil.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/walmart/mobileautomation/StepDefinitions/LoginSteps.java
+/Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/walmart/mobileautomation/CI_CD/JenkinsParams.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/eCommerce_tc_1.java
+/Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/walmart/mobileautomation/CI_CD/SampleTest.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/AppiumBasics.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/BrowserBaseTest.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/IOSScrollTest.java
@@ -20,6 +23,7 @@
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/IOSSlider.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/eCommerce_tc_4_Hybrid.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/IOSBasics.java
+/Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/walmart/mobileautomation/CI_CD/SauceLabsTest.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/com/eCommerce_tc_2.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/walmart/mobileautomation/StepDefinitions/StartAppiumServer.java
 /Users/kondurikiran/Documents/C/AutomationTesting/10_appium/Udemy_Cource/Appium/src/test/java/walmart/mobileautomation/utils/DragDropDemo.java
