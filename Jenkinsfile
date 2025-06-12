@@ -2,33 +2,59 @@ pipeline {
     agent any
 
     environment {
-        // Optional: Define environment variables if needed
+        REPORT = 'target/surefire-reports/emailable-report.html'
+    }
+
+    parameters {
+        string(name: 'TAG_NAME', defaultValue: '@smoke', description: 'Cucumber tag to execute')
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/kirank1994/Appium.git'
+                git url: 'https://github.com/kirank1994/Appium.git', branch: 'main'
             }
         }
 
         stage('Build & Test') {
             steps {
-                sh 'clean test -DTAG_NAME=$TAG_NAME' // or your test command
+                sh 'mvn clean test -DTAG_NAME=${TAG_NAME}'
+            }
+        }
+
+        stage('Publish Report') {
+            steps {
+                archiveArtifacts artifacts: "${REPORT}", onlyIfSuccessful: true
             }
         }
     }
 
     post {
-        always {
+        success {
             emailext(
-                subject: "Build Report - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """<p>Hi Team,</p>
-                         <p>Build #${env.BUILD_NUMBER} completed. Please find the attached TestNG HTML report.</p>
-                         <p><a href="${env.BUILD_URL}">Click here to open the Jenkins Job</a></p>""",
-                mimeType: 'text/html',
+                subject: "✅ Jenkins Build Success - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """<h2>Build Successful</h2>
+                         <p>Job: ${env.JOB_NAME}</p>
+                         <p>Build: #${env.BUILD_NUMBER}</p>
+                         <p>Tag Executed: ${params.TAG_NAME}</p>
+                         <p>See attached test report.</p>""",
                 to: 'kirankonduri018@gmail.com',
-                attachmentsPattern: '**/test-output/emailable-report.html'
+                attachLog: true,
+                attachmentsPattern: "${REPORT}",
+                mimeType: 'text/html'
+            )
+        }
+
+        failure {
+            emailext(
+                subject: "❌ Jenkins Build Failed - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """<h2>Build Failed</h2>
+                         <p>Job: ${env.JOB_NAME}</p>
+                         <p>Build: #${env.BUILD_NUMBER}</p>
+                         <p>Check Jenkins for more details.</p>""",
+                to: 'kirankonduri018@gmail.com',
+                attachLog: true,
+                mimeType: 'text/html'
             )
         }
     }
